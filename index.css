@@ -1,0 +1,179 @@
+
+/*MObile design css*/
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(/images/bg-mobile.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+}
+
+.container{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 460px;
+    width: 100%;
+    top: 5em;
+    max-width: 100%;
+    max-height: auto;
+
+}
+.flyo_sec{
+    width: 300px;
+    height: 210px;
+    max-height: 210px;
+    background-color: hsl(228, 56%, 26%);
+    border-top-right-radius: 100px;
+    padding:30px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+.img_div >img{
+    background-color:hsl(229, 57%, 11%);
+    padding: 10px;
+    border-radius: 10px;
+    height: 40px;
+}
+
+.memory_{
+    width: 300px;
+    height: 120px; 
+    background-color: hsl(228, 56%, 26%);
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position:relative;
+    color: white;
+    font-weight: 400;
+}
+.para{
+    width: 100%;
+    height: 10px;
+}
+.progress_bar{
+    width: 100%;
+    height: 15px;
+    margin-top: 20px;
+    background-color:hsl(229, 57%, 11%);
+    border-radius: 20px;
+    position: relative;
+}
+.progress_status{
+    z-index: 100;
+    width: 80%;
+    background-image:linear-gradient(to right,hsl(6, 100%, 80%),hsl(335, 100%, 65%)) ;
+    height: 15px;
+    border-radius: 10px;
+    position: absolute;
+    animation:mymove 4.5s ease-out;
+}
+@keyframes mymove{
+    0%   {width:0%}
+    100%  {width:80%}
+}
+
+.storage_cap{
+    width: 100%;
+    height: 10px;
+    display: flex;
+    justify-content:space-between;
+    margin-top: 5px;
+}
+.usage_left{
+    width: 140px;
+    height: 60px;
+    border-radius:8px;
+    background-color: white;
+    display: flex;
+    position: absolute;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    bottom: -40px;
+    color: black;
+}
+span{
+    font-size: 24px;
+    font-weight: 700;
+    margin-right: 0.2em;
+}
+
+.attribution{
+    position: fixed;
+    bottom: 0px;
+    margin:  0px 30%;
+}
+
+/* DESKTOP DESIGN*/
+
+@media only screen and (min-width: 700px) 
+{
+    body{
+        background-color:hsl(229, 57%, 11%);
+        background-repeat: no-repeat;
+        background-position-y: 300px;
+        background-image: url(/images/bg-desktop.png);
+        background-size: cover;
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+    }
+    .memory_{
+        width: 330px;
+        margin-left: 20px;
+        justify-content:center;
+        align-items: center;
+    }
+    .bg_mobile{
+        display: none;
+    }
+    .container{
+        flex-direction:row;
+        display: flex;
+    }
+
+    .usage_left{
+        width: 130px;
+        height: 50px;
+        border-radius:8px;
+        background-color: white;
+        display: flex;
+        top: -40px;
+        right: 30px;
+        border-bottom-right-radius: 0px;
+    }
+    .usage_left::before{
+        content: "";
+        height: 50px;
+        width: 30px;
+        position: absolute;
+        bottom: -45px;
+        right: 0px;
+        background-color: white;
+        clip-path: polygon(100% 0,0 0,100% 100%);
+    }
+    .attribution{
+        margin-left: 40%;
+        margin-right: auto;
+    }
+}
